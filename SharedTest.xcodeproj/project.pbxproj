@@ -8,18 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		5DEC0B392BEA700100A9E3A1 /* SharedTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC0B382BEA700100A9E3A1 /* SharedTestApp.swift */; };
-		5DEC0B3B2BEA700100A9E3A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC0B3A2BEA700100A9E3A1 /* ContentView.swift */; };
+		5DEC0B3B2BEA700100A9E3A1 /* AppFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC0B3A2BEA700100A9E3A1 /* AppFeature.swift */; };
 		5DEC0B3D2BEA700200A9E3A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DEC0B3C2BEA700200A9E3A1 /* Assets.xcassets */; };
 		5DEC0B412BEA700200A9E3A1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DEC0B402BEA700200A9E3A1 /* Preview Assets.xcassets */; };
+		5DEC0B492BEA702800A9E3A1 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 5DEC0B482BEA702800A9E3A1 /* ComposableArchitecture */; };
+		5DEC0B4B2BEA713E00A9E3A1 /* ChildFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC0B4A2BEA713E00A9E3A1 /* ChildFeature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5DEC0B352BEA700100A9E3A1 /* SharedTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharedTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DEC0B382BEA700100A9E3A1 /* SharedTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestApp.swift; sourceTree = "<group>"; };
-		5DEC0B3A2BEA700100A9E3A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5DEC0B3A2BEA700100A9E3A1 /* AppFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeature.swift; sourceTree = "<group>"; };
 		5DEC0B3C2BEA700200A9E3A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5DEC0B3E2BEA700200A9E3A1 /* SharedTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SharedTest.entitlements; sourceTree = "<group>"; };
 		5DEC0B402BEA700200A9E3A1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5DEC0B4A2BEA713E00A9E3A1 /* ChildFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DEC0B492BEA702800A9E3A1 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,7 +57,8 @@
 			isa = PBXGroup;
 			children = (
 				5DEC0B382BEA700100A9E3A1 /* SharedTestApp.swift */,
-				5DEC0B3A2BEA700100A9E3A1 /* ContentView.swift */,
+				5DEC0B3A2BEA700100A9E3A1 /* AppFeature.swift */,
+				5DEC0B4A2BEA713E00A9E3A1 /* ChildFeature.swift */,
 				5DEC0B3C2BEA700200A9E3A1 /* Assets.xcassets */,
 				5DEC0B3E2BEA700200A9E3A1 /* SharedTest.entitlements */,
 				5DEC0B3F2BEA700200A9E3A1 /* Preview Content */,
@@ -85,6 +90,9 @@
 			dependencies = (
 			);
 			name = SharedTest;
+			packageProductDependencies = (
+				5DEC0B482BEA702800A9E3A1 /* ComposableArchitecture */,
+			);
 			productName = SharedTest;
 			productReference = 5DEC0B352BEA700100A9E3A1 /* SharedTest.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +121,9 @@
 				Base,
 			);
 			mainGroup = 5DEC0B2C2BEA700100A9E3A1;
+			packageReferences = (
+				5DEC0B472BEA702800A9E3A1 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 5DEC0B362BEA700100A9E3A1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,7 +150,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DEC0B3B2BEA700100A9E3A1 /* ContentView.swift in Sources */,
+				5DEC0B3B2BEA700100A9E3A1 /* AppFeature.swift in Sources */,
+				5DEC0B4B2BEA713E00A9E3A1 /* ChildFeature.swift in Sources */,
 				5DEC0B392BEA700100A9E3A1 /* SharedTestApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +286,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -312,6 +325,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -359,6 +373,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5DEC0B472BEA702800A9E3A1 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.10.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5DEC0B482BEA702800A9E3A1 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5DEC0B472BEA702800A9E3A1 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5DEC0B2D2BEA700100A9E3A1 /* Project object */;
 }

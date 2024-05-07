@@ -1,17 +1,13 @@
-//
-//  SharedTestApp.swift
-//  SharedTest
-//
-//  Created by Librecz Gábor on 07/05/2024.
-//
-
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct SharedTestApp: App {
+  @Bindable var store = Store.init(initialState: .init(), reducer: { AppFeature()._printChanges() })
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+          AppFeatureView(store: store)
         }
     }
 }
