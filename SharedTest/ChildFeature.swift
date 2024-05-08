@@ -5,18 +5,20 @@ import SwiftUI
   public init() {}
 
   @ObservableState public struct State: Equatable {
-    @Shared(.counter) var counter
+    @Shared(.counter) var grandChildState: GrandChildFeature.State
 
     public init() {}
   }
 
-  public enum Action: Sendable { case count }
+  public enum Action: Sendable { case grandChildAction(GrandChildFeature.Action) }
 
   public var body: some ReducerOf<Self> {
+    Scope(state: \.grandChildState, action: \.grandChildAction) {
+      GrandChildFeature()
+    }
     Reduce { state, action in
       switch action {
-      case .count:
-        state.counter.count += 1
+      case .grandChildAction:
         return .none
       }
     }
@@ -29,6 +31,8 @@ public struct ChildFeatureView: View {
   public init(store: StoreOf<ChildFeature>) { self.store = store }
 
   public var body: some View {
-    Button("child: \(self.store.counter.count)") { self.store.send(.count) }
+    Text("grandChild: \(self.store.state.grandChildState.count)")
+    GrandChildFeatureView(store: self.store.scope(state: \.grandChildState, action: \.grandChildAction))
   }
 }
+

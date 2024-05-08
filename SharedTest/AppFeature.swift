@@ -39,7 +39,7 @@ public struct AppFeatureView: View {
   public var body: some View {
     VStack {
       Text("app: \(self.store.state.counter.count)")
-      Text("child: \(self.store.state.childState.counter.count)")
+      Text("child: \(self.store.state.childState.grandChildState.count)")
       Button("app: \(self.store.counter.count)") { self.store.send(.count) }
       ChildFeatureView(store: self.store.scope(state: \.childState, action: \.childAction))
     }
