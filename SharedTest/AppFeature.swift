@@ -5,10 +5,12 @@ import SwiftUI
   public init() {}
 
   @ObservableState public struct State: Equatable {
-    var count: Int = 0
+    @Shared(.count) var count: Int
+
     var childState: ChildFeature.State = .init()
 
-    public init() {}
+    public init() {
+    }
   }
 
   public enum Action: Sendable {

@@ -13,6 +13,7 @@
 		5DEC0B412BEA700200A9E3A1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DEC0B402BEA700200A9E3A1 /* Preview Assets.xcassets */; };
 		5DEC0B492BEA702800A9E3A1 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 5DEC0B482BEA702800A9E3A1 /* ComposableArchitecture */; };
 		5DEC0B4B2BEA713E00A9E3A1 /* ChildFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC0B4A2BEA713E00A9E3A1 /* ChildFeature.swift */; };
+		5DEC0B4D2BEA731F00A9E3A1 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC0B4C2BEA731F00A9E3A1 /* Shared.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		5DEC0B3E2BEA700200A9E3A1 /* SharedTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SharedTest.entitlements; sourceTree = "<group>"; };
 		5DEC0B402BEA700200A9E3A1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5DEC0B4A2BEA713E00A9E3A1 /* ChildFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildFeature.swift; sourceTree = "<group>"; };
+		5DEC0B4C2BEA731F00A9E3A1 /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				5DEC0B382BEA700100A9E3A1 /* SharedTestApp.swift */,
 				5DEC0B3A2BEA700100A9E3A1 /* AppFeature.swift */,
 				5DEC0B4A2BEA713E00A9E3A1 /* ChildFeature.swift */,
+				5DEC0B4C2BEA731F00A9E3A1 /* Shared.swift */,
 				5DEC0B3C2BEA700200A9E3A1 /* Assets.xcassets */,
 				5DEC0B3E2BEA700200A9E3A1 /* SharedTest.entitlements */,
 				5DEC0B3F2BEA700200A9E3A1 /* Preview Content */,
@@ -152,6 +155,7 @@
 			files = (
 				5DEC0B3B2BEA700100A9E3A1 /* AppFeature.swift in Sources */,
 				5DEC0B4B2BEA713E00A9E3A1 /* ChildFeature.swift in Sources */,
+				5DEC0B4D2BEA731F00A9E3A1 /* Shared.swift in Sources */,
 				5DEC0B392BEA700100A9E3A1 /* SharedTestApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

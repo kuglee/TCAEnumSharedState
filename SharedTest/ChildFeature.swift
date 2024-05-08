@@ -5,7 +5,7 @@ import SwiftUI
   public init() {}
 
   @ObservableState public struct State: Equatable {
-    var count: Int = 0
+    @Shared(.count) var count: Int
 
     public init() {}
   }
