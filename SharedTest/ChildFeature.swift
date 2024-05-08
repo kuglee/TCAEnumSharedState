@@ -1,38 +1,59 @@
 import ComposableArchitecture
+import Popup
 import SwiftUI
 
 @Reducer public struct ChildFeature: Sendable {
   public init() {}
 
   @ObservableState public struct State: Equatable {
-    @Shared(.counter) var grandChildState: GrandChildFeature.State
+    @Shared(.counter) var counterState
+    @Presents var destination: Destination.State?
 
     public init() {}
   }
 
-  public enum Action: Sendable { case grandChildAction(GrandChildFeature.Action) }
+  public enum Action: Sendable {
+    case destination(PresentationAction<Destination.Action>)
+    case counterAction(CounterFeature.Action)
+    case showCounterButtonTapped
+  }
 
   public var body: some ReducerOf<Self> {
-    Scope(state: \.grandChildState, action: \.grandChildAction) {
-      GrandChildFeature()
-    }
+    Scope(state: \.counterState, action: \.counterAction) { CounterFeature() }
+
     Reduce { state, action in
       switch action {
-      case .grandChildAction:
+      case .destination: return .none
+      case .counterAction: return .none
+      case .showCounterButtonTapped:
+        state.destination = .counter(state.counterState)
+
         return .none
       }
     }
+    .ifLet(\.$destination, action: \.destination)
+  }
+
+  @Reducer(state: .equatable, action: .sendable) public enum Destination {
+    case counter(CounterFeature)
   }
 }
 
 public struct ChildFeatureView: View {
-  let store: StoreOf<ChildFeature>
+  @Bindable var store: StoreOf<ChildFeature>
 
   public init(store: StoreOf<ChildFeature>) { self.store = store }
 
   public var body: some View {
-    Text("grandChild: \(self.store.state.grandChildState.count)")
-    GrandChildFeatureView(store: self.store.scope(state: \.grandChildState, action: \.grandChildAction))
+    VStack {
+      CounterView(store: self.store.scope(state: \.counterState, action: \.counterAction))
+      Button("Show counter in a popup") { self.store.send(.showCounterButtonTapped) }
+        .popup(
+          item: self.$store.scope(state: \.destination?.counter, action: \.destination.counter),
+          attachmentAnchor: .point(.bottom),
+          attachmentEdge: .bottom,
+          alignment: .bottom
+        ) { CounterView(store: $0) }
+    }
   }
 }
-

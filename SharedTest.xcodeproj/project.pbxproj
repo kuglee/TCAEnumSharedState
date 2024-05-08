@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5D7076882BEC0E7B002D90AB /* Popup in Frameworks */ = {isa = PBXBuildFile; productRef = 5D7076872BEC0E7B002D90AB /* Popup */; };
+		5D70768A2BEC1C47002D90AB /* CounterFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7076892BEC1C47002D90AB /* CounterFeature.swift */; };
 		5DEC0B392BEA700100A9E3A1 /* SharedTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC0B382BEA700100A9E3A1 /* SharedTestApp.swift */; };
 		5DEC0B3B2BEA700100A9E3A1 /* AppFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC0B3A2BEA700100A9E3A1 /* AppFeature.swift */; };
 		5DEC0B3D2BEA700200A9E3A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DEC0B3C2BEA700200A9E3A1 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D7076892BEC1C47002D90AB /* CounterFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterFeature.swift; sourceTree = "<group>"; };
 		5DEC0B352BEA700100A9E3A1 /* SharedTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharedTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DEC0B382BEA700100A9E3A1 /* SharedTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestApp.swift; sourceTree = "<group>"; };
 		5DEC0B3A2BEA700100A9E3A1 /* AppFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeature.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				5DEC0B3C2BEA700200A9E3A1 /* Assets.xcassets */,
 				5DEC0B3E2BEA700200A9E3A1 /* SharedTest.entitlements */,
 				5DEC0B3F2BEA700200A9E3A1 /* Preview Content */,
+				5D7076892BEC1C47002D90AB /* CounterFeature.swift */,
 			);
 			path = SharedTest;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 				5DEC0B3B2BEA700100A9E3A1 /* AppFeature.swift in Sources */,
 				5DEC0B4B2BEA713E00A9E3A1 /* ChildFeature.swift in Sources */,
 				5DEC0B4D2BEA731F00A9E3A1 /* Shared.swift in Sources */,
+				5D70768A2BEC1C47002D90AB /* CounterFeature.swift in Sources */,
 				5DEC0B392BEA700100A9E3A1 /* SharedTestApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
