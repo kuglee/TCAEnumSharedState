@@ -1,5 +1,7 @@
 import ComposableArchitecture
 
-extension PersistenceKey where Self == PersistenceKeyDefault<InMemoryKey<Int>> {
-  public static var count: Self { PersistenceKeyDefault(.inMemory("count"), 0) }
+extension PersistenceKey where Self == PersistenceKeyDefault<InMemoryKey<CounterState>> {
+  public static var counter: Self { PersistenceKeyDefault(.inMemory("counter"), .init()) }
 }
+
+public struct CounterState: Equatable { public var count = 0 }
