@@ -1,5 +1,5 @@
 {
-  "originHash" : "e7024a9cd3fa1c40fa4003b3b2b186c00ba720c787de8ba274caf8fc530677e8",
+  "originHash" : "e87b28ed20eebd3a1497937bd8bffc59eb8a2c77a15077529d40fbb349fbdbe0",
   "pins" : [
     {
       "identity" : "combine-schedulers",
@@ -8,6 +8,24 @@
       "state" : {
         "revision" : "9dc9cbe4bc45c65164fa653a563d8d8db61b09bb",
         "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "ontapoutsidegesture",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kuglee/OnTapOutsideGesture",
+      "state" : {
+        "branch" : "main",
+        "revision" : "42f0bffd07fbcce2dc16108966dea07bab84e387"
+      }
+    },
+    {
+      "identity" : "popup",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kuglee/Popup",
+      "state" : {
+        "branch" : "main",
+        "revision" : "6f2caa62e9067caa0c583b03e6520b85542af5af"
       }
     },
     {

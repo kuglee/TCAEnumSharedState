@@ -1,4 +1,5 @@
 import ComposableArchitecture
+import Popup
 import SwiftUI
 
 @Reducer public struct AppFeature: Sendable {
@@ -8,31 +9,41 @@ import SwiftUI
     @Shared(.counter) var counter
 
     var childState: ChildFeature.State = .init()
+    @Presents var destination: Destination.State?
 
     public init() {}
   }
 
   public enum Action: Sendable {
     case count
-    case childAction(ChildFeature.Action)
+    case destination(PresentationAction<Destination.Action>)
+    case showChildButtonTapped
   }
 
   public var body: some ReducerOf<Self> {
-    Scope(state: \.childState, action: \.childAction) { ChildFeature() }
-
     Reduce { state, action in
       switch action {
       case .count:
         state.counter.count += 1
         return .none
-      case .childAction: return .none
+      //      case .childAction: return .none
+      case .destination: return .none
+      case .showChildButtonTapped:
+        state.destination = .child(.init())
+
+        return .none
       }
     }
+    .ifLet(\.$destination, action: \.destination)
+  }
+
+  @Reducer(state: .equatable, action: .sendable) public enum Destination {
+    case child(ChildFeature)
   }
 }
 
 public struct AppFeatureView: View {
-  let store: StoreOf<AppFeature>
+  @Bindable var store: StoreOf<AppFeature>
 
   public init(store: StoreOf<AppFeature>) { self.store = store }
 
@@ -41,7 +52,14 @@ public struct AppFeatureView: View {
       Text("app: \(self.store.state.counter.count)")
       Text("child: \(self.store.state.childState.grandChildState.count)")
       Button("app: \(self.store.counter.count)") { self.store.send(.count) }
-      ChildFeatureView(store: self.store.scope(state: \.childState, action: \.childAction))
+      Button("Show child") { self.store.send(.showChildButtonTapped) }
+        .popup(item: self.$store.scope(state: \.destination?.child, action: \.destination.child),
+               attachmentAnchor: .point(.bottomTrailing),
+               attachmentEdge: .bottom,
+               alignment: .bottomLeading
+        ) {
+          ChildFeatureView(store: $0)
+        }
     }
   }
 }
