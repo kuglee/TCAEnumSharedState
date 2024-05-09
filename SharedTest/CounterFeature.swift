@@ -5,7 +5,7 @@ import SwiftUI
   public init() {}
 
   @ObservableState public struct State: Equatable {
-    public var count = 0
+    @Shared(.counter) public  var counter
 
     public init() {}
   }
@@ -16,7 +16,7 @@ import SwiftUI
     Reduce { state, action in
       switch action {
       case .count:
-        state.count += 1
+        state.counter.count += 1
 
         return .none
       }
@@ -29,5 +29,5 @@ public struct CounterView: View {
 
   public init(store: StoreOf<CounterFeature>) { self.store = store }
 
-  public var body: some View { Button("Counter count: \(self.store.count)") { self.store.send(.count) } }
+  public var body: some View { Button("Counter count: \(self.store.counter.count)") { self.store.send(.count) } }
 }
